@@ -51,3 +51,22 @@ app.get('/user/validateToken', (req, res) => {
         return res.status(401).send(error.message);
     }
 });
+
+//verify token with authentication
+app.get('/user/verifyAuthToken', (req, res) => {
+    let jwtToken = process.env.JWT_SECRET_KEY;
+    try {
+        const tokenBariere = req.header('authorization');
+        const lengText = tokenBariere.indexOf(' ');
+        const token = tokenBariere.substring(lengText+1, tokenBariere.length);
+
+        const verifyToken = jwt.verify(token, jwtToken);
+        if(verifyToken) {
+            return res.send('Successfully Verified');
+        }else {
+            return res.send(401).send(error);
+        }
+    } catch (error) {
+        return res.status(401).send(error.message);
+    }
+});
