@@ -1,0 +1,21 @@
+{
+  "name": "jwt-nodejs-simple",
+  "version": "1.0.0",
+  "description": "simple jwt for nodejs for authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "jwt",
+    "nodejs",
+    "simple"
+  ],
+  "author": "Rochiyat",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
